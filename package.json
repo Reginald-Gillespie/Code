@@ -1,0 +1,12 @@
+{
+  "name": "turn-server-test",
+  "version": "1.0.0",
+  "description": "Node turn server",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "node-fetch": "^3.2.10",
+    "node-turn": "^0.0.6",
+    "discord-webhook-node": "^1.1.8"
+  }
+}
