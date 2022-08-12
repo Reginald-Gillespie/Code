@@ -44,8 +44,8 @@ function startTurnServer() {
 }
 
 //Run
-//startTurnServer();
-startHttpServer();
+startTurnServer();
+//startHttpServer();
 
 
 
