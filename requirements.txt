@@ -1,0 +1,3 @@
+node-fetch
+node-turn
+discord-webhook-node
