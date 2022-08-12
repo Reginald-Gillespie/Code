@@ -4,25 +4,27 @@ const hook = new Webhook("https://discord.com/api/webhooks/1006720252861759639/9
 hook.setUsername("Heroku Webhook Test");
 hook.send("Heroku Started");
 
-// const keepAlive = require("./server.js")
-// keepAlive();
+// Note: heroku does not allow using more than 1 port, which is defined in process.env.PORT
+// Meaning I can't run both the http and turn server at the same time.
 
 //Start http server
-const http = require('http');
-const port = 58134; //process.env.PORT || 3000
+function startHttpServer() {
+  const http = require('http');
+  const port = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-  hook.send(`Server running on port `+port);
-});
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h1>Hello World</h1>');
+  });
+  server.listen(port,() => {
+    console.log(`Server running at port `+port);
+    hook.send(`Server running on port `+port);
+  });
+}
 
 //Start turn server
-var turnServer = function() {
+function startTurnServer() {
   var Turn = require('node-turn');
   var server = new Turn({
     // set options
@@ -41,4 +43,4 @@ var turnServer = function() {
     hook.send("Turn server received connection");
   });
 }
-turnServer();
+startTurnServer();
