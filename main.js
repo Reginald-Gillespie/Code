@@ -9,7 +9,7 @@ hook.send("Heroku Started");
 
 //Start http server
 const http = require('http');
-const port = process.env.PORT || 3000
+const port = 58134; //process.env.PORT || 3000
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -41,3 +41,4 @@ var turnServer = function() {
     hook.send("Turn server received connection");
   });
 }
+turnServer();
