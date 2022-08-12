@@ -1,3 +1,6 @@
+const keepAlive = require("./server.js")
+keepAlive();
+
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook("https://discord.com/api/webhooks/1006720252861759639/9-lpfflbhXJWgkpdGmDiHr5d-GwyZLEm6zR_YgQID9FpDmEGgXtIhY9DMoVpDb8WkR95");
 hook.setUsername("Heroku Webhook Test");
