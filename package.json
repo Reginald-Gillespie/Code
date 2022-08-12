@@ -9,7 +9,7 @@
     "node-turn": "^0.0.6",
     "discord-webhook-node": "^1.1.8",
     "express": "^4.18.1"
-  }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
