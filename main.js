@@ -6,7 +6,7 @@ hook.send("Heroku Started");
 
 // Note: heroku does not allow using more than 1 port, which is defined in process.env.PORT
 // Meaning I can't run both the http and turn server at the same time.
- const port = process.env.PORT || 3000;
+ const port = process.env.PORT || 3478;
 
 //Start http server
 function startHttpServer() {
@@ -21,6 +21,7 @@ function startHttpServer() {
     hook.send(`Server running on port `+port);
   });
 }
+startHttpServer();
 
 //Start turn server
 function startTurnServer() {
@@ -29,7 +30,7 @@ function startTurnServer() {
     // set options
     authMech: 'long-term',
     listeningIps: ["0.0.0.0"],
-    listeningPort: port,
+    listeningPort: 3478,
     debugLevel: "ALL"
   });
   server.start();
