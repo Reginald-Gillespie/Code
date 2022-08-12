@@ -42,4 +42,10 @@ function startTurnServer() {
     hook.send("Turn server received connection");
   });
 }
-startTurnServer();
+
+//Run
+//startTurnServer();
+startHttpServer();
+
+
+
