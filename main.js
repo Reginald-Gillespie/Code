@@ -35,7 +35,7 @@ function startTurnServer() {
   server.start();
   server.addUser("user", "pass");
   console.log("Started turn server");
-  hook.send("Started turn server");
+  hook.send("Started turn server on port " + port);
   //Set up server listeners
   server.addListener("connection", function() {
     console.log("Connected");
